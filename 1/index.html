@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Expanded Picture Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        h3 {
+            text-align: center;
+            margin: 10px 0;
+            color: #555;
+        }
+        section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        .image-item {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+        }
+        .name, .value, .description {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>180 Proj 1</h1>
+    <h3>Steven Tang</h3>
+
+    <!-- Section 1 -->
+    <section>
+        <h2>Section 1: Brute Force</h2>
+        <p class="description-text">
+            This section features images that are restored using brute force, by sweeping the offset from -15 to 15, and picking the alignment with the best mean sqaure error in regard to the intensity of each respective RGB channel.
+        </p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="media/cathedral.jpg" alt="Picture 1">
+                <p class="name">cathedral</p>
+                <p class="description"> green shift: (5, 2)   red shift: (12, 3)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/monastery.jpg" alt="Picture 2">
+                <p class="name">monastery</p>
+                <p class="description"> green shift: (-3, 2)   red shift: (3, 2)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/tobolsk.jpg" alt="Picture 3">
+                <p class="name">tobolsk</p>
+                <p class="description"> green shift: (3, 2)   red shift: (6, 3)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section>
+        <h2>Section 2: Prymaid Method</h2>
+        <p class="description-text">
+            This section features images that are restored using a prymaid method. Starting from a blurred down version of the pictrues, it finds the best local alignment by sweeping the offset from only -1 to 1, then goes up in resolution then do the same. Some blurryness were fixed by normalizeing the colors before hand, but the emir remains somewhat blurry.
+        </p>
+        <div class="image-container">
+            <div class="image-item">
+                <img src="media/church.jpg" alt="church">
+                <p class="name">church</p>
+                <p class="description"> green shift: (25, 4) red shift: (58, -4)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/emir.jpg" alt="emir">
+                <p class="name">emir</p>
+                <p class="description"> green shift: (49, 24) red shift: (99, 69)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/harvesters.jpg" alt="harvesters">
+                <p class="name">harvesters</p>
+                <p class="description"> green shift: (60, 17) red shift: (124, 14)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/icon.jpg" alt="icon">
+                <p class="name">icon</p>
+                <p class="description"> green shift: (41, 17) red shift: (89, 23)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/lady.jpg" alt="lady">
+                <p class="name">lady</p>
+                <p class="description"> green shift: (49, 9) red shift: (112, 11)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/melons.jpg" alt="melons">
+                <p class="name">melons</p>
+                <p class="description"> green shift: (81, 9) red shift: (178, 12)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/onion_church.jpg" alt="onion_church">
+                <p class="name">onion_church</p>
+                <p class="description"> green shift: (51, 27) red shift: (108, 37)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/sculpture.jpg" alt="sculpture">
+                <p class="name">sculpture</p>
+                <p class="description"> green shift: (33, -11) red shift: (139, -26)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/self_portrait.jpg" alt="self_portrait">
+                <p class="name">self_portrait</p>
+                <p class="description"> green shift: (79, 29) red shift: (176, 37)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/three_generations.jpg" alt="three_generations">
+                <p class="name">three_generations</p>
+                <p class="description"> green shift: (54, 14) red shift: (112, 11)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/train.jpg" alt="train">
+                <p class="name">train</p>
+                <p class="description"> green shift: (42, 4) red shift: (86, 31)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/custom_image_1.jpg" alt="custom_image_1">
+                <p class="name">custom_image_1</p>
+                <p class="description"> green shift: (32, 0) red shift: (134, -1)</p>
+            </div>
+            <div class="image-item">
+                <img src="media/custom_image_2.jpg" alt="custom_image_2">
+                <p class="name">custom_image_2</p>
+                <p class="description"> green shift: (38, 21) red shift: (76, 35)</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
